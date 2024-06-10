@@ -12,7 +12,7 @@ type ICardProps = {
     progress: string;
 };
 
-export const Card = (props: ICardProps) => (
+const Card = (props: ICardProps) => (
     <div className="m-2 max-w-sm rounded-lg border border-gray-200 bg-white shadow">
         <Link href={props.url} rel="noopener noreferrer" target="_blank">
             <img className="rounded-t-lg" src={props.imageUrl} alt="" />
