@@ -1,0 +1,20 @@
+generator client {
+  provider        = "prisma-client-js"
+  previewFeatures = ["postgresqlExtensions"]
+  extensions      = ["(function)"]
+}
+
+datasource db {
+  provider   = "postgresql"
+  url        = env("POSTGRES_URL")
+  extensions = [uuid_ossp(map: "uuid-ossp", schema: "public")]
+}
+
+model gfms {
+  id       String  @id @default(dbgenerated("uuid_generate_v4()")) @db.Uuid
+  url      String  @unique
+  imageurl String @unique
+  title    String
+  progress Int @default(0)
+  target   Int?
+}
