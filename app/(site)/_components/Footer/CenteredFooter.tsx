@@ -1,5 +1,6 @@
-import { metadata } from '@/app/(site)/layout';
 import Link from 'next/link';
+
+import { metadata } from '@/app/(site)/layout';
 
 const CenteredFooter = () => (
   <footer className=" w-full bg-white p-4 text-xs shadow md:flex md:items-center md:justify-between md:p-6 xl:p-8">

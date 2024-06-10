@@ -5,5 +5,7 @@ type ISectionProps = {
 };
 
 export const Section = (props: ISectionProps) => (
-    <div className='mx-auto max-w-screen-lg px-3 pt-10 pb-32'>{props.children}</div>
-)
+  <div className="mx-auto max-w-screen-lg px-3 pb-32 pt-10">
+    {props.children}
+  </div>
+);
