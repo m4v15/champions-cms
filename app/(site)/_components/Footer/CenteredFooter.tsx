@@ -1,12 +1,10 @@
 import Link from 'next/link';
 
-import { metadata } from '@/app/(site)/layout';
-
 const CenteredFooter = () => (
   <footer className=" w-full bg-white p-4 text-xs shadow md:flex md:items-center md:justify-between md:p-6 xl:p-8">
     <ul className="mb-6 flex flex-wrap items-center md:mb-0">
       <li className="footer-copyright">
-        © Copyright {new Date().getFullYear()} {metadata.title}. Made with{' '}
+        © Copyright {new Date().getFullYear()}
         <Link
           href="https://creativedesignsguru.com"
           rel="noopener noreferrer"
