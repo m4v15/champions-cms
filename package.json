@@ -9,6 +9,9 @@
     "lint": "next lint",
     "fix": "eslint --fix"
   },
+  "pre-commit": {
+    "run": "fix",
+  },
   "dependencies": {
     "@prisma/client": "^5.15.0",
     "@vercel/postgres": "^0.8.0",
@@ -23,10 +26,6 @@
     "@types/node": "^20",
     "@types/react": "^18",
     "@types/react-dom": "^18",
-    "postcss": "^8",
-    "prisma": "^5.15.0",
-    "tailwindcss": "^3.4.1",
-    "typescript": "^5",
     "eslint": "^8.56.0",
     "eslint-config-airbnb-base": "^15.0.0",
     "eslint-config-airbnb-typescript": "^17.1.0",
@@ -39,6 +38,11 @@
     "eslint-plugin-react-hooks": "^4.6.0",
     "eslint-plugin-simple-import-sort": "^10.0.0",
     "eslint-plugin-tailwindcss": "^3.14.1",
-    "eslint-plugin-unused-imports": "^3.0.0"
+    "eslint-plugin-unused-imports": "^3.0.0",
+    "postcss": "^8",
+    "pre-commit": "^1.2.2",
+    "prisma": "^5.15.0",
+    "tailwindcss": "^3.4.1",
+    "typescript": "^5"
   }
 }
