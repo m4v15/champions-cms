@@ -10,7 +10,7 @@
     "fix": "eslint --fix"
   },
   "pre-commit": {
-    "run": "fix",
+    "run": "lint, fix"
   },
   "dependencies": {
     "@prisma/client": "^5.15.0",
