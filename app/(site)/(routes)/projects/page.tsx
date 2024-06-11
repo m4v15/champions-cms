@@ -1,34 +1,40 @@
 /* eslint no-underscore-dangle: ["error", { "allow": ["_id"] }] */
 
-import Image from 'next/image';
+import { notFound } from 'next/navigation';
+import { PortableText } from 'next-sanity';
 
-import { getProjects } from '@/sanity/sanity-utils';
+import { Section } from '@/app/(site)/_components/Section/Section';
+import { getProjects, getSitePage } from '@/sanity/sanity-utils';
+
+import { ProjectCard } from '../../_components/Project Card/Project Card';
+
+export const dynamic = 'force-dynamic';
 
 export default async function Projects() {
+  const sitePage = await getSitePage('projects');
+  if (!sitePage) {
+    return notFound();
+  }
+  const { header, content } = sitePage;
   const projects = await getProjects();
 
   return (
-    <>
-      <h2 className="text-gr mt-10 text-3xl font-bold"> Our Projects: </h2>x
-      <div className="mt-5 grid gap-8 md:grid-cols-2 lg:grid-cols-3">
-        {projects.map((project) => (
-          <div
-            key={project._id}
-            className="rounded-md border border-gray-500 p-2"
-          >
-            {project.image && (
-              <Image
-                src={project.image}
-                alt={project.name}
-                width={250}
-                height={100}
-                className="rounded-lg border border-gray-500 object-cover"
-              />
-            )}
-            <div>{project.name}</div>
+    <div className="text-gray-600 antialiased">
+      <Section>
+        <h1 className="leading-hero whitespace-pre-line text-2xl font-bold text-gray-100">
+          <span className="text-3xl text-gray-900">{header}</span>
+        </h1>
+        <div className="py-3">
+          <PortableText value={content} />
+        </div>
+        <div className="py-3">
+          <div className="mt-5 grid gap-8 md:grid-cols-2 lg:grid-cols-3">
+            {projects.map((project) => (
+              <ProjectCard {...project} key={project._id} />
+            ))}
           </div>
-        ))}
-      </div>
-    </>
+        </div>
+      </Section>
+    </div>
   );
 }

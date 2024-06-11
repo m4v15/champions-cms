@@ -17,7 +17,9 @@ const NavBarPages: NavBarPage[] = [
   { title: 'about', slug: 'about' },
   { title: 'volunteer', slug: 'volunteer' },
   { title: 'funds', slug: 'funds' },
-  { title: 'links', slug: 'links' },
+  { title: 'tips', slug: 'tips' },
+  { title: 'press', slug: 'press' },
+  { title: 'other projects', slug: 'projects' },
 ];
 
 export default async function RootLayout({
