@@ -11,9 +11,6 @@
     "postinstall": "prisma generate",
     "prepare": "husky"
   },
-  "pre-commit": {
-    "run": "lint, fix"
-  },
   "dependencies": {
     "@prisma/client": "^5.15.0",
     "@vercel/postgres": "^0.8.0",
