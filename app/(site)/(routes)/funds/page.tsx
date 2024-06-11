@@ -1,6 +1,6 @@
 import type { gfms } from '@prisma/client';
-import Link from 'next/link';
 import React from 'react';
+import Link from 'next/link';
 
 import { fetchGFMs } from '@/app/_lib/data';
 
